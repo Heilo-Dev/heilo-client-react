@@ -8,7 +8,7 @@ const Button = ({ label, onClick, className, link, icon }) => {
         <button onClick={onClick} className={clx("", className)}>
           <Link
             to={link}
-            className="flex items-center gap-5 justify-center w-full h-full"
+            className="flex items-center gap-5 justify-center w-full h-full "
           >
             <i>{icon}</i>
             {label}
@@ -17,7 +17,7 @@ const Button = ({ label, onClick, className, link, icon }) => {
       ) : (
         <button
           onClick={onClick}
-          className={clx("flex items-center gap-5 justify-center", className)}
+          className={clx("flex items-center gap-5 justify-center font-bold", className)}
         >
           <i>{icon}</i>
           {label}

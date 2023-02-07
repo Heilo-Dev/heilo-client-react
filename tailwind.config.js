@@ -3,6 +3,15 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+  spacing:    {
+        '8px': '8px',
+        '12px': '12px',
+        '16px': '16px',
+        '24px': '24px',
+        '32px': '32px',
+        '48px': '48px',
+        '50px':'50px'
+      },
       colors: {
         primaryDark: "#01B489",
         primaryLight: "#1BE59D",
@@ -11,6 +20,7 @@ module.exports = {
         accentLight: "#444F55",
         bgAccent: "#F8F8F8",
         muted: "#7D7C7C",
+        inputBg: "#EBEBEB"
         
      
       },

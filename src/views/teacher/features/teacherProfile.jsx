@@ -1,8 +1,13 @@
 import React from "react";
 import teacherImg from "assets/img/tutor.png"
-import { Button} from"shared/components/button/index"
+import reviewImg from "assets/img/tutor.png"
+import { Button } from "shared/components/button/index"
+
+
+
+
 const TeacherProfile = () => {
-  return <div className="grid grid-cols-3 gap-2 p-2  md:grid-cols-3 lg:grid-cols-3  sm:grid-cols-2 xs:grid-cols-1   justify-center overflow-hidden">
+  return <div className="grid grid-cols-3 gap-2 p-2  md:grid-cols-3 lg:grid-cols-3  sm:grid-cols-1 xs:grid-cols-1   justify-center ">
 
 
     {/* .................................Left side */}
@@ -16,11 +21,11 @@ const TeacherProfile = () => {
         <Button label="Hire Now" className="shadow-lg hover:bg-primaryDark text-center  bg-primaryLight py-1 px-3 rounded-lg text-white active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out mb-4"></Button>
 
         {/* HOURLY RATE */}
-          <div className="flex flex-row justify-between font-bold pb-2 w-full  "><h2 className="bg-slate-200 px-5 py-1 font-bold text-muted rounded-lg">Hourly Rate</h2> <span>200 BDT</span> </div>
-        <div className="flex flex-row justify-between font-bold pb-2"><h2 className="bg-slate-200 px-5 py-1 font-bold text-muted rounded-lg">Student Reffer</h2> <span>150 </span> </div>
+          <div className="flex flex-row justify-between font-bold pb-2 w-full  "><h2 className="bg-inputBg px-5 py-1 font-bold text-muted rounded-lg w-fit">Hourly Rate</h2> <span>200 BDT</span> </div>
+        <div className="flex flex-row justify-between font-bold pb-2"><h2 className="bg-inputBg px-5 py-1 font-bold text-muted rounded-lg">Student Reffer</h2> <span>150 </span> </div>
         
         <div className="flex flex-row justify-between font-bold pb-2 ">
-          <h2 className="bg-slate-200 px-5 py-1 font-bold text-muted rounded-lg">Tutions Complete</h2> <span>150 </span> 
+          <h2 className="bg-inputBg px-5 py-1 font-bold text-muted rounded-lg">Tutions Complete</h2> <span>150 </span> 
         </div>
 
         {/* ABOUT */}
@@ -45,9 +50,9 @@ const TeacherProfile = () => {
         <div className="min-w-full bg-bgAccent  mt-2 p-2 rounded-2xl  ">
          <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Availability</p>
         <div className="grid gap-2 grid-cols-2 grid-flow-row-dense mt-2 ">
-          <span className="pb-2  bg-blue-100 px-5 py-1 font-bold text-black rounded-lg">12 PM</span>
-          <span className="pb-2  bg-blue-100 px-5 py-1 font-bold text-black rounded-lg">10 AM</span>
-          <span className="pb-2  bg-blue-100 px-5 py-1 font-bold text-black rounded-lg">After 05 PM</span>
+          <span className="pb-2 border  border-primaryDark  px-5 py-1 font-bold text-black rounded-lg">12 PM</span>
+          <span className="pb-2 border  border-primaryDark  px-5 py-1 font-bold text-black rounded-lg">10 AM</span>
+          <span className="pb-2 border  border-primaryDark px-5 py-1 font-bold text-black rounded-lg">After 05 PM</span>
            </div>
 
         </div>
@@ -101,7 +106,87 @@ const TeacherProfile = () => {
            </div>
 
         </div>
-     </div>
+      </div>
+      
+      {/* ......Review..... */}
+      
+      {/*review Left side */}
+        <div className="min-w-full  bg-bgAccent mt-2 p-4 rounded-2xl  ">
+        <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Reviews</p>
+        
+        <div className="grid gap-2 grid-cols-2 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-2  ">
+          
+          <div className="flex flex-col gap-2 items-center w-full h-60 mt-4  overflow-hidden overflow-y-auto  ">
+          
+          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
+              <img className="w-50px" src={reviewImg} alt="" />
+              <div>
+                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
+                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
+               </div>
+           </div>
+          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
+              <img className="w-50px" src={reviewImg} alt="" />
+              <div>
+                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
+                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
+               </div>
+           </div>
+          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
+              <img className="w-50px" src={reviewImg} alt="" />
+              <div>
+                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
+                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
+               </div>
+           </div>
+          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
+              <img className="w-50px" src={reviewImg} alt="" />
+              <div>
+                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
+                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
+               </div>
+           </div>
+          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
+              <img className="w-50px" src={reviewImg} alt="" />
+              <div>
+                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
+                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
+               </div>
+           </div>
+          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
+              <img className="w-50px" src={reviewImg} alt="" />
+              <div>
+                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
+                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
+               </div>
+           </div>
+          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
+              <img className="w-50px" src={reviewImg} alt="" />
+              <div>
+                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
+                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
+               </div>
+           </div>
+          
+         
+        {/*review right side   */}
+
+        
+          
+          </div>
+          
+            <div className="w-full h-auto mt-4 px-5">
+            <div className="flex justify-center"><img src={reviewImg} alt="" /></div>
+              <h1 className="pb-2    py-1 font-bold  rounded-lg text-muted">RATING </h1>
+                <p className="text-yellow-300 text-3xl">&#9829;  &#9829;  &#9829;  &#9829;  &#9829;</p>
+              <p className="pb-2     py-1   rounded-lg text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas veniam nisi consequatur neque repellat, temporibus consequuntur in obcaecati vero! Libero.</p>
+            </div>
+
+        </div>
+
+          </div>
+
+
     </div>
 
   </div>;
