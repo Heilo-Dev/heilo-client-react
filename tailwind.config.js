@@ -9,15 +9,17 @@ module.exports = {
         textSecondary: "#444F55",
         accent: "rgba(68, 79, 85, 1)",
         accentLight: "#444F55",
-        bgAccent: "#F1F1F1",
+        bgAccent: "#F8F8F8",
         muted: "#7D7C7C",
+        
+     
       },
       fontFamily: {
         // primary: ['Roboto', 'sans-serif'],
       },
     },
     screens: {
-      // xs: '360px',
+      xs: '320px',
       sm: "480px",
       md: "768px",
       // ipad: '830px',

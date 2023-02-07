@@ -17,7 +17,7 @@ const Button = ({ label, onClick, className, link, icon }) => {
       ) : (
         <button
           onClick={onClick}
-          className={clx("flex items-center gap-5", className)}
+          className={clx("flex items-center gap-5 justify-center", className)}
         >
           <i>{icon}</i>
           {label}

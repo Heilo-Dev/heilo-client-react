@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import "shared/styles/globals.css";
 import "shared/styles/scrollbar.css";
 
+
 const App = () => {
   return (
     <>
