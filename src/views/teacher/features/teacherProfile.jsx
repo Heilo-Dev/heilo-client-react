@@ -6,6 +6,7 @@ import { Button } from "shared/components/button/index"
 
 
 
+
 const TeacherProfile = () => {
   return <div className="grid grid-cols-3 gap-2 p-2  md:grid-cols-3 lg:grid-cols-3  sm:grid-cols-1 xs:grid-cols-1   justify-center ">
 

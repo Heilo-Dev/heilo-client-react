@@ -1,0 +1,1 @@
+export { default as TagGenarate } from "./tag.jsx"
