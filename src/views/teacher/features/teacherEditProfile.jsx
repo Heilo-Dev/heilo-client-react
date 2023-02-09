@@ -5,12 +5,21 @@ import reviewImg from "assets/img/tutor.png"
 import { Button } from "shared/components/button/index"
 import { TagGenarate } from "shared/components/tagGenarator";
 
+
+
 const TeacherEditProfile = () => {
   const [name, setName] = useState("Sakib Ahmed")
   const [tag, setTag] = useState(" ")
-  const handleName = (e) => {
-     setName ( e.target.value)
-  }
+  const [edit, setEdit] = useState(true)
+  const [Save, setSave] = useState(false)
+console.log(name)
+
+
+
+    const divisions = ['DHAKA','CHITTAGONG','BARISAL','RAJSHAHI','KHULNA','RANGPUR','SYLHET','MYMENSINGH']
+    
+    
+
   return <div className="grid grid-cols-3 gap-2 p-2 overflow-hidden md:grid-cols-3 lg:grid-cols-3  sm:grid-cols-1 xs:grid-cols-1   justify-center ">
 
 
@@ -21,9 +30,9 @@ const TeacherEditProfile = () => {
         <img className="w-32 min-h-min z-10 -mb-8 rounded-sm "  src={teacherImg} alt="" />
       <div className="min-w-full  bg-bgAccent rounded-2xl  px-4 flex flex-col justify-center ">
         
-          <input value={name} placeholder="Your Name" onChange={(e)=>{handleName(e)}} className=" w-full border rounded-lg outline-primaryDark  mt-10 font-semibold  text-muted  px-2 mb-2"/>
-        <input defaultValue="Bangladesh University of Professionals" placeholder="Your Name" onChange={(e)=>{handleName()}}  className="w-full outline-primaryDark rounded-lg px-2 mb-2 text-muted"/>
-        <Button label="Hire Now" className="shadow-lg hover:bg-primaryDark text-center  bg-primaryLight py-1 px-3 rounded-lg text-white active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out mb-4"></Button>
+          <input value={name} placeholder="Your Name" readOnly className=" w-full border rounded-lg outline-none  mt-10 font-semibold  text-muted  px-2 mb-2"/>
+        <input defaultValue="Bangladesh University of Professionals"  readOnly className="w-full border  outline-none rounded-lg px-2 mb-2 text-muted"/>
+        
 
         {/* HOURLY RATE */}
         <div className="grid grid-cols-3 justify-between font-bold pb-2 w-full  ">
@@ -47,7 +56,7 @@ const TeacherEditProfile = () => {
         <hr />
         {/* ....SUBJEECT.... */}
         <div className="mt-4 mb-4 ">
-          <TagGenarate label="Subject Willing to Teach" handleAddition={ tag} onChange={(e)=>setTag(e.target.value)} >
+          <TagGenarate className="border outline-blue-500 w-full primary rounded-lg" label="Subject Willing to Teach" handleAddition={ tag} onChange={(e)=>setTag(e.target.value)} >
 
           </TagGenarate>
           {/* <span className="pb-2 w-full bg-slate-300 px-5 py-1 font-bold text-muted rounded-lg">Math</span>
@@ -75,131 +84,245 @@ const TeacherEditProfile = () => {
 
 
 
-{/*........................................... Right SIde................... */}
+{/*........................................... Right SIde..................
+............................................................................. */}
     <div className="col-span-2">
 
       <div className="grid grid-cols-1 gap-y-8">
 
-         <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
-         <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Basic Information</p>
-        <div className="grid gap-2 grid-cols-2 grid-flow-row-dense mt-2 ">
-         <div> <h1 className="pb-2   px-5 py-1 font-thin  rounded-lg text-muted">Address</h1>
-          <p className="pb-2    px-5 py-1 font-bold  rounded-lg text-muted">274, sher-e-bangla road, Dhaka- 1209</p></div>
-         <div> <h1 className="pb-2   px-5 py-1 font-thin  rounded-lg text-muted">Preferred Medium</h1>
-          <p className="pb-2    px-5 py-1 font-bold  rounded-lg text-muted">( English/ Bangla/ Version)</p></div>
-          
-           </div>
 
+        {/* BASIC INFO SEGMENT */}
+
+         <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
+          
+          <div className="flex justify-between">
+             <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Basic Information</p>
+        
+            {edit ? <Button onClick={() => setEdit(false)} label="EDIT" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center"></Button> :
+              <Button onClick={() =>{
+                setEdit(true)
+                setSave(true)
+              }} label="SAVE" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center">
+              </Button>}
+          </div>
+          
+       
+          <div className="grid gap-2 grid-cols-3 grid-flow-row-dense mt-2 ">
+
+            {/* Name */}
+            <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Name</h1>
+              {edit ? <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" defaultValue={name} /> :
+                <input onChange={(e)=>setName(e.target.value)} className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted" defaultValue="Sakib Abdullah" />}
+            </div>
+              
+            {/* email */}
+            <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Email</h1>
+             <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted"  defaultValue="sakibabdullah@gmail.com"/>
+            </div>
+        {/* contact number */}
+            <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted"> Contact Number</h1>
+              {edit? <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted"  defaultValue="01757777771"/> :<input className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted"  defaultValue="274, sher-e-bangla road, Dhaka- 1209"/>}
+            </div>
+                {/* division village */}
+            <div className="grid gap-2 grid-cols-2  rounded-lg">
+              <div className="border rounded-xl"><h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Division</h1>
+                {
+                  !edit ? <select className="w-full outline-none py-2   px-5 text-sm font-semibold  rounded-lg text-muted"  >
+                 
+                    {divisions.map((division, index) => {
+                      return <option key={index}>{ division}</option>
+                  })} 
+                  </select>
+                    :
+                  <input readOnly className="w-full outline-none    px-5  font-semibold  rounded-lg text-muted"  defaultValue="DHAKA"/>
+                }
+              </div>
+
+              <div className="border rounded-xl"><h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Village</h1>
+                {edit? <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted"  defaultValue="Sokal dupur"/> :<input className="w-full outline-primaryDark py-2   px-5  font-bold  rounded-lg text-muted"  defaultValue="Sokal dupur"/>}
+              </div>
+              
+            
+            </div>
+
+           
+             {/* Preferred medium */}
+            <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Preferred Medium</h1>
+              {
+                  !edit ? <select className="w-full outline-none py-2  px-5 text-sm font-semibold  rounded-lg text-muted"  >
+                 
+                    {divisions.map((division, index) => {
+                      return <option key={index}>{ division}</option>
+                  })} 
+                  </select>
+                    :
+                  <input readOnly className="w-full outline-none    px-5  font-semibold  rounded-lg text-muted"  defaultValue="DHAKA"/>
+                }
+            </div>
+
+            {/* Preferred Class */}
+            <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Preferred Class</h1>
+              {
+                  !edit ? <select className="w-full outline-none py-2  px-5 text-sm font-semibold  rounded-lg text-muted"  >
+                 
+                    {divisions.map((division, index) => {
+                      return <option key={index}>{ division}</option>
+                  })} 
+                  </select>
+                    :
+                  <input readOnly className="w-full outline-none    px-5  font-semibold  rounded-lg text-muted"  defaultValue="DHAKA"/>
+                }
+            </div>
+             
+          
+        </div>
         </div>
 
+      {/* EDUCATION SEGMENT */}
+
          <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
-         <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Education</p>
+         <div className="flex justify-between">
+             <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Education</p>
+        
+            {edit ? <Button onClick={() => setEdit(false)} label="EDIT" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center"></Button> :
+              <Button onClick={() =>{
+                setEdit(true)
+                setSave(true)
+              }} label="SAVE" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center">
+              </Button>}
+          </div>
+
         <div className="grid gap-2 grid-cols-2 grid-flow-row-dense mt-2 ">
-         <div> <h1 className="pb-2   px-5 py-1 font-thin  rounded-lg text-muted">Current Instituite</h1>
-              <p className="pb-2    px-5 py-1 font-bold  rounded-lg text-muted">North South University</p></div>
+          {/* current instituition */}
+            <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Current Institution</h1>
+              {edit ? <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" defaultValue="North South" /> :
+                <input onChange={(e)=>setName(e.target.value)} className="w-full outline-primaryDark py-2   px-5  font-bold  rounded-lg text-muted" defaultValue="North South" />}
+            </div>
             
-         <div> <h1 className="pb-2   px-5 py-1 font-thin  rounded-lg text-muted">Previous Institution</h1>
-              <p className="pb-2    px-5 py-1 font-bold  rounded-lg text-muted">Notre Dame College</p></div>
+        <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Previous Institution</h1>
+              {edit ? <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" defaultValue="North South" /> :
+                <input onChange={(e)=>setName(e.target.value)} className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted" defaultValue="North South" />}
+            </div>
             
-         <div> <h1 className="pb-2   px-5 py-1 font-thin  rounded-lg text-muted">Subject</h1>
-              <p className="pb-2    px-5 py-1 font-bold  rounded-lg text-muted">BBA in Finance</p></div>
+        <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Department</h1>
+              {edit ? <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" defaultValue="North South" /> :
+                <input onChange={(e)=>setName(e.target.value)} className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted" defaultValue="North South" />}
+            </div>
             
-         <div> <h1 className="pb-2   px-5 py-1 font-thin  rounded-lg text-muted">Medium</h1>
-          <p className="pb-2    px-5 py-1 font-bold  rounded-lg text-muted">( Engliish/ Bangla/ Version)</p></div>
+          <div className="border rounded-xl"><h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Medium</h1>
+                {
+                  !edit ? <select className="w-full outline-none py-2  px-5 text-sm font-semibold  rounded-lg text-muted"  >
+                 
+                    {divisions.map((division, index) => {
+                      return <option key={index} className="py-2">{ division}</option>
+                  })} 
+                  </select>
+                    :
+                  <input readOnly className="w-full outline-none    px-5  font-semibold  rounded-lg text-muted"  defaultValue="DHAKA"/>
+                }
+              </div>
           
            </div>
-
         </div>
+
+        {/* ACHIVMENT SEGEMNT */}
+
          <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
-         <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Achievements</p>
-        <div className="grid gap-2 grid-cols-2 grid-flow-row-dense mt-2 ">
-         <div> <h1 className="pb-2   px-5 py-1 font-thin  rounded-lg text-muted">Address</h1>
-          <p className="pb-2    px-5 py-1 font-bold  rounded-lg text-muted">274, sher-e-bangla road, Dhaka- 1209</p></div>
-         <div> <h1 className="pb-2   px-5 py-1 font-thin  rounded-lg text-muted">Preferred Medium</h1>
-          <p className="pb-2    px-5 py-1 font-bold  rounded-lg text-muted">( English/ Bangla/ Version)</p></div>
+         <div className="flex justify-between">
+             <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Achievements</p>
+        
+            {edit ? <Button onClick={() => setEdit(false)} label="EDIT" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center"></Button> :
+              <Button onClick={() =>{
+                setEdit(true)
+                setSave(true)
+              }} label="SAVE" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center">
+              </Button>}
+          </div>
+        <div className="grid gap-2 grid-cols-1 grid-flow-row-dense mt-2 ">
+        
+            <div>
+              {edit ? <textarea readOnly className="w-full outline-none   px-5   rounded-lg text-muted" defaultValue="tell us your Achivments" /> :
+              <textarea  className="w-full outline-none   px-5  font-thin  rounded-lg text-muted" defaultValue="" />}
+            </div>
+            
+        
           
            </div>
 
         </div>
       </div>
       
-      {/* ......Review..... */}
-      
-      {/*review Left side */}
-        <div className="min-w-full  bg-bgAccent mt-2 p-4 rounded-2xl  ">
-        <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Reviews</p>
+      {/* ......ACCOUNT DETAILS..... */}
+    
+          <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
+         <div className="flex justify-between">
+          <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Account details</p>
+          <p className="py-1 mt-4  inline px-5  font-medium text-muted rounded-md text-center">Change Password</p>
+          
         
-        <div className="grid gap-2 grid-cols-2 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-2  ">
-          
-          <div className="flex flex-col gap-2 items-center w-full h-60 mt-4  overflow-hidden overflow-y-auto  ">
-          
-          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
-              <img className="w-50px" src={reviewImg} alt="" />
-              <div>
-                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
-                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
-               </div>
-           </div>
-          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
-              <img className="w-50px" src={reviewImg} alt="" />
-              <div>
-                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
-                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
-               </div>
-           </div>
-          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
-              <img className="w-50px" src={reviewImg} alt="" />
-              <div>
-                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
-                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
-               </div>
-           </div>
-          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
-              <img className="w-50px" src={reviewImg} alt="" />
-              <div>
-                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
-                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
-               </div>
-           </div>
-          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
-              <img className="w-50px" src={reviewImg} alt="" />
-              <div>
-                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
-                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
-               </div>
-           </div>
-          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
-              <img className="w-50px" src={reviewImg} alt="" />
-              <div>
-                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
-                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
-               </div>
-           </div>
-          <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
-              <img className="w-50px" src={reviewImg} alt="" />
-              <div>
-                <h3 className=" text-muted rounded-lg w-fit">Imran Hossain</h3>
-                <h3 className=" text-muted rounded-lg w-fit">Class 6, DRMC</h3>
-               </div>
-           </div>
-          
-         
-        {/*review right side   */}
-
-        
-          
+            {edit ? <Button onClick={() => setEdit(false)} label="EDIT" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center"></Button> :
+              <Button onClick={() =>{
+                setEdit(true)
+                setSave(true)
+              }} label="SAVE" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center">
+              </Button>}
           </div>
-          
-            <div className="w-full h-auto mt-4 px-5">
-            <div className="flex justify-center"><img src={reviewImg} alt="" /></div>
-              <h1 className="pb-2    py-1 font-bold  rounded-lg text-muted">RATING </h1>
-                <p className="text-yellow-300 text-3xl">&#9829;  &#9829;  &#9829;  &#9829;  &#9829;</p>
-              <p className="pb-2     py-1   rounded-lg text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas veniam nisi consequatur neque repellat, temporibus consequuntur in obcaecati vero! Libero.</p>
-            </div>
 
+        <div className="grid gap-2 grid-cols-2 grid-flow-row-dense mt-2 ">
+          {/* Current password */}
+            <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Current password</h1>
+              {edit ? <input  readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" /> :
+                <input   className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted" />}
+          </div>
+          {/*  */}
+            <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">New password</h1>
+              {edit ? <input  readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" /> :
+                <input   className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted" />}
+            </div>
+            
+       
+          
+           </div>
         </div>
 
+      
+      {/* Payment method */}
+
+        <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
+         <div className="flex justify-between">
+          <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Payment Method</p>
+          
+          
+        
+            {edit ? <Button onClick={() => setEdit(false)} label="EDIT" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center"></Button> :
+              <Button onClick={() =>{
+                setEdit(true)
+                setSave(true)
+              }} label="SAVE" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center">
+              </Button>}
           </div>
+
+        <div className="grid gap-2 grid-cols-2 grid-flow-row-dense mt-2 ">
+          {/* Current password */}
+            <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Select method</h1>
+              {edit ? <input  readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" defaultValue="bKash" /> :
+              <select className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted" >
+              <option value="">bKash</option>
+              <option value="">Nagad</option>
+              <option value="">Rocket</option>
+              
+              </select>}
+          </div>
+          {/*  */}
+            <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Select opeartor</h1>
+              {edit ? <input  readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" /> :
+                <input   className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted" />}
+            </div>
+            
+       
+          
+           </div>
+        </div>
 
 
     </div>

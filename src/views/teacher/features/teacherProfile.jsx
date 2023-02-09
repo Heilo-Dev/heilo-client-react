@@ -19,7 +19,7 @@ const TeacherProfile = () => {
         <div className="min-w-full  bg-bgAccent rounded-2xl  px-4 flex flex-col justify-center ">
           <h1 className="mt-8 font-semibold  text-muted  px-2 mb-2">Sakib Abdullah</h1>
         <p className="  rounded-lg px-2 mb-2 text-muted">Bangladesh University of Professionals</p>
-        <Button label="Hire Now" className="shadow-lg hover:bg-primaryDark text-center  bg-primaryLight py-1 px-3 rounded-lg text-white active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out mb-4"></Button>
+        <Button label="Hire Now" className="shadow-lg hover:bg-primaryDark text-center font-bold bg-primaryLight py-1 px-3 rounded-lg text-white active:bg-gray-500 active:shadow-lg transition duration-150 ease-in-out mb-4"></Button>
 
         {/* HOURLY RATE */}
           <div className="flex flex-row justify-between font-bold pb-2 w-full  "><h2 className="bg-inputBg px-5 py-1 font-bold text-muted rounded-lg w-fit">Hourly Rate</h2> <span>200 BDT</span> </div>

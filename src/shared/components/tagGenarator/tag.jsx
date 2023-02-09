@@ -13,11 +13,12 @@ import { WithContext as ReactTags } from 'react-tag-input';
 // });
 
 const KeyCodes = {
+  space :32,
   comma: 188,
   enter: 13
 };
 
-const delimiters = [KeyCodes.comma, KeyCodes.enter];
+const delimiters = [KeyCodes.comma, KeyCodes.enter,KeyCodes.space];
 // ...............................................
 const TagGenarate = ({label}) => {
     const [tags, setTags] = React.useState([
@@ -49,9 +50,12 @@ const TagGenarate = ({label}) => {
   };
     return (
         <div>
-            <h1 className='w-full text-muted'>{ label} </h1>
+        <p className="  bg-primaryLight  inline p-1  font-bold text-white rounded-md text-center">{ label}</p>
          <div>
-        <ReactTags  classNames="outline-primaryDark"
+          <ReactTags  
+            style={{
+              color:"red",
+            }}
           tags={tags}
           delimiters={delimiters}
           handleDelete={handleDelete}
