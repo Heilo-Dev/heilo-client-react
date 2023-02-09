@@ -20,7 +20,8 @@ console.log(name)
     
     
 
-  return <div className="grid grid-cols-3 gap-2 p-2 overflow-hidden md:grid-cols-3 lg:grid-cols-3  sm:grid-cols-1 xs:grid-cols-1   justify-center ">
+  return (
+    <div className="grid grid-cols-3 gap-2 p-2 overflow-hidden md:grid-cols-1 lg:grid-cols-3  sm:grid-cols-1 xs:grid-cols-1   justify-center ">
 
 
     {/* .................................Left side */}
@@ -86,28 +87,28 @@ console.log(name)
 
 {/*........................................... Right SIde..................
 ............................................................................. */}
-    <div className="col-span-2">
+    <div className="overflow-hidden max-h-screen overflow-y-auto  col-span-2">
 
-      <div className="grid grid-cols-1 gap-y-8">
+      <div className=" grid grid-cols-1 gap-y-8">
 
 
         {/* BASIC INFO SEGMENT */}
 
          <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
           
-          <div className="flex justify-between">
+             <div className="flex justify-between">
              <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Basic Information</p>
         
-            {edit ? <Button onClick={() => setEdit(false)} label="EDIT" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center"></Button> :
+              {edit ? <Button onClick={() => setEdit(false)} label="EDIT" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center"></Button> :
               <Button onClick={() =>{
                 setEdit(true)
                 setSave(true)
               }} label="SAVE" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center">
               </Button>}
-          </div>
-          
+             </div>
+              
        
-          <div className="grid gap-2 grid-cols-3 grid-flow-row-dense mt-2 ">
+           <div className="grid gap-2 grid-cols-3 xs:grid-cols-1   grid-flow-row-dense mt-2 ">
 
             {/* Name */}
             <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Name</h1>
@@ -119,7 +120,7 @@ console.log(name)
             <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Email</h1>
              <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted"  defaultValue="sakibabdullah@gmail.com"/>
             </div>
-        {/* contact number */}
+           {/* contact number */}
             <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted"> Contact Number</h1>
               {edit? <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted"  defaultValue="01757777771"/> :<input className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted"  defaultValue="274, sher-e-bangla road, Dhaka- 1209"/>}
             </div>
@@ -175,10 +176,10 @@ console.log(name)
             </div>
              
           
-        </div>
-        </div>
+         </div>
+          </div>
 
-      {/* EDUCATION SEGMENT */}
+          {/* EDUCATION SEGMENT */}
 
          <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
          <div className="flex justify-between">
@@ -192,19 +193,19 @@ console.log(name)
               </Button>}
           </div>
 
-        <div className="grid gap-2 grid-cols-2 grid-flow-row-dense mt-2 ">
+          <div className="grid gap-2 grid-cols-2 xs:grid-cols-1 sm:grid-cols-1 grid-flow-row-dense mt-2 ">
           {/* current instituition */}
             <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Current Institution</h1>
               {edit ? <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" defaultValue="North South" /> :
                 <input onChange={(e)=>setName(e.target.value)} className="w-full outline-primaryDark py-2   px-5  font-bold  rounded-lg text-muted" defaultValue="North South" />}
             </div>
             
-        <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Previous Institution</h1>
+          <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Previous Institution</h1>
               {edit ? <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" defaultValue="North South" /> :
                 <input onChange={(e)=>setName(e.target.value)} className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted" defaultValue="North South" />}
             </div>
             
-        <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Department</h1>
+         <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Department</h1>
               {edit ? <input readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" defaultValue="North South" /> :
                 <input onChange={(e)=>setName(e.target.value)} className="w-full outline-primaryDark py-2  px-5  font-bold  rounded-lg text-muted" defaultValue="North South" />}
             </div>
@@ -223,12 +224,12 @@ console.log(name)
               </div>
           
            </div>
-        </div>
+            </div>
 
-        {/* ACHIVMENT SEGEMNT */}
+            {/* ACHIVMENT SEGEMNT */}
 
-         <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
-         <div className="flex justify-between">
+           <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
+          <div className="flex justify-between xs:justify-around sm:justify-around md:justify-around lg:justify-around">
              <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Achievements</p>
         
             {edit ? <Button onClick={() => setEdit(false)} label="EDIT" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center"></Button> :
@@ -237,27 +238,26 @@ console.log(name)
                 setSave(true)
               }} label="SAVE" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center">
               </Button>}
-          </div>
-        <div className="grid gap-2 grid-cols-1 grid-flow-row-dense mt-2 ">
+           </div>
+          <div className="grid gap-2 grid-cols-1 grid-flow-row-dense mt-2 ">
         
             <div>
               {edit ? <textarea readOnly className="w-full outline-none   px-5   rounded-lg text-muted" defaultValue="tell us your Achivments" /> :
               <textarea  className="w-full outline-none   px-5  font-thin  rounded-lg text-muted" defaultValue="" />}
             </div>
-            
-        
-          
            </div>
 
-        </div>
-      </div>
-      
-      {/* ......ACCOUNT DETAILS..... */}
+            </div>
+
+
+
+
+        {/* ......ACCOUNT DETAILS..... */}
     
           <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
          <div className="flex justify-between">
           <p className="py-1 mt-4 bg-primaryLight  inline px-5  font-bold text-white rounded-md text-center">Account details</p>
-          <p className="py-1 mt-4  inline px-5  font-medium text-muted rounded-md text-center">Change Password</p>
+          <p className="py-1 mt-4  inline px-5 xs:hidden  font-medium text-muted rounded-md text-center">Change Password</p>
           
         
             {edit ? <Button onClick={() => setEdit(false)} label="EDIT" className="py-1 mt-4 bg-inputBg  inline px-5   text-primaryDark rounded-md text-center"></Button> :
@@ -268,7 +268,7 @@ console.log(name)
               </Button>}
           </div>
 
-        <div className="grid gap-2 grid-cols-2 grid-flow-row-dense mt-2 ">
+        <div className="grid gap-2 grid-cols-2 xs:grid-cols-1 sm:grid-cols-2 grid-flow-row-dense mt-2 ">
           {/* Current password */}
             <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Current password</h1>
               {edit ? <input  readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" /> :
@@ -286,7 +286,7 @@ console.log(name)
         </div>
 
       
-      {/* Payment method */}
+        {/* Payment method */}
 
         <div className="min-w-full bg-bgAccent mt-2 p-4 rounded-2xl  ">
          <div className="flex justify-between">
@@ -302,7 +302,7 @@ console.log(name)
               </Button>}
           </div>
 
-        <div className="grid gap-2 grid-cols-2 grid-flow-row-dense mt-2 ">
+        <div className="grid gap-2 grid-cols-2 xs:grid-cols-1  sm:grid-cols-2 grid-flow-row-dense mt-2 ">
           {/* Current password */}
             <div className="border rounded-lg"> <h1 className="   px-5 py-1 font-thin  rounded-lg text-muted">Select method</h1>
               {edit ? <input  readOnly  className="w-full outline-none   px-5  font-bold  rounded-lg text-muted" defaultValue="bKash" /> :
@@ -325,9 +325,15 @@ console.log(name)
         </div>
 
 
+      </div>
+      
+      
+
+
     </div>
 
-  </div>;
+  </div>
+  )
 };
 
 export default TeacherEditProfile;
