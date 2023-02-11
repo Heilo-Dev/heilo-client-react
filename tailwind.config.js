@@ -3,14 +3,19 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-  spacing:    {
+      backgroundImage: {
+        'wallet-cardBlue': "url('/src/assets/img/wallet-card1.png')",
+        'wallet-cardGgreen': "url('/src/assets/img/wallet-card2.png')",
+      },
+      spacing: {
         '8px': '8px',
         '12px': '12px',
         '16px': '16px',
         '24px': '24px',
         '32px': '32px',
         '48px': '48px',
-        '50px':'50px'
+        '50px': '50px',
+        "50%": "50%"
       },
       colors: {
         primaryDark: "#01B489",
@@ -21,8 +26,8 @@ module.exports = {
         bgAccent: "#F8F8F8",
         muted: "#7D7C7C",
         inputBg: "#EBEBEB"
-        
-     
+
+
       },
       fontFamily: {
         // primary: ['Roboto', 'sans-serif'],
