@@ -1,11 +1,11 @@
 const { Link } = require("react-router-dom");
 const { clx } = require("shared/configs");
 
-const Button = ({ label, onClick, className, link, icon }) => {
+const Button = ({ isDisable,label, onClick, className, link, icon }) => {
   return (
     <>
       {link ? (
-        <button onClick={onClick} className={clx("", className)}>
+        <button isDisable onClick={onClick} className={clx("", className)}>
           <Link
             to={link}
             className="flex items-center gap-5 justify-center w-full h-full "
