@@ -8,6 +8,7 @@ import "shared/styles/scrollbar.css";
 const App = () => {
   return (
     <>
+      
       <Outlet />
     </>
   );

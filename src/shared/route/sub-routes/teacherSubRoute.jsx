@@ -2,11 +2,11 @@ import TeacherDashboard from "views/teacher/features/teacherDashboard";
 import TeacherProfile from "views/teacher/features/teacherProfile";
 import TeacherEditProfile from "views/teacher/features/teacherEditProfile";
 import TeacherWallet from "views/teacher/features/teacherWallet";
-import { TeacherInbox } from './../../../views/teacher/features/teacherInbox';
+import {TeacherInbox} from 'views/teacher/features/teacherInbox';
 
-import LoginModal from './../../components/login/login';
+import { HireTutor } from 'shared/components/index';
 
-import  Registration  from '../../components/registration/registration';
+
 
 
 const teacherSubRoute = [
@@ -31,12 +31,16 @@ const teacherSubRoute = [
     element: <TeacherInbox />,
   },
   {
-    path: "/teacher/login",
-    element: <LoginModal />,
+    path: "/teacher/hiretutor",
+    element: < HireTutor/>,
   },
-  {
-    path: "/teacher/registration",
-    element: <Registration/>,
-  },
+  // {
+  //   path: "/teacher/login",
+  //   element: <LoginModal />,
+  // },
+  // {
+  //   path: "/teacher/registration",
+  //   element: <Registration/>,
+  // },
 ];
 export default teacherSubRoute;

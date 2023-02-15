@@ -7,7 +7,7 @@ import { CircleCrossIcon } from './../../../shared/components/icons/teacher-dash
 import Image from './../../../shared/components/image/image';
 import teacherDp from "../../../assets/img/women.png"
 
-var Carousel = require('react-responsive-carousel').Carousel;
+
 
 
 

@@ -10,7 +10,7 @@ const Button = ({ isDisable,label, onClick, className, link, icon }) => {
             to={link}
             className="flex items-center gap-5 justify-center w-full h-full "
           >
-            <i>{icon}</i>
+            <i className={icon}></i>
             {label}
           </Link>
         </button>
@@ -19,7 +19,7 @@ const Button = ({ isDisable,label, onClick, className, link, icon }) => {
           onClick={onClick}
           className={clx("flex items-center gap-5 justify-center ", className)}
         >
-          <i>{icon}</i>
+          <i className={icon}></i>
           {label}
         </button>
       )}

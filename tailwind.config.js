@@ -6,6 +6,7 @@ module.exports = {
       backgroundImage: {
         'wallet-cardBlue': "url('/src/assets/img/wallet-card1.png')",
         'wallet-cardGgreen': "url('/src/assets/img/wallet-card2.png')",
+        'wave2': "url('/src/assets/img/wave2.png')",
       },
       spacing: {
         '8px': '8px',

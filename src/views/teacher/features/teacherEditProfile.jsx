@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import teacherImg from "assets/img/tutor.png"
 
-import reviewImg from "assets/img/tutor.png"
+// import reviewImg from "assets/img/tutor.png"
 import { Button } from "shared/components/button/index"
-import { TagGenarate } from "shared/components/tagGenarator";
+// import { TagGenarate } from "shared/components/tagGenarator";
 
 
 
@@ -57,9 +57,9 @@ console.log(name)
         <hr />
         {/* ....SUBJEECT.... */}
         <div className="mt-4 mb-4 ">
-          <TagGenarate className="border outline-blue-500 w-full primary rounded-lg" label="Subject Willing to Teach" handleAddition={ tag} onChange={(e)=>setTag(e.target.value)} >
+          {/* <TagGenarate className="border outline-blue-500 w-full primary rounded-lg" label="Subject Willing to Teach" handleAddition={ tag} onChange={(e)=>setTag(e.target.value)} >
 
-          </TagGenarate>
+          </TagGenarate> */}
           {/* <span className="pb-2 w-full bg-slate-300 px-5 py-1 font-bold text-muted rounded-lg">Math</span>
           <span className="pb-2 w-full bg-pink-200 px-5 py-1 font-bold text-muted rounded-lg">Bangla</span>
           <span className="pb-2 w-full bg-slate-200 px-5 py-1 font-bold text-muted rounded-lg">Physics</span>

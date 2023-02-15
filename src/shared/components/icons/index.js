@@ -18,8 +18,14 @@ import { WalletIcon } from "./teacher-dashboard/laptop";
 import { CircleCheckIcon } from "./teacher-dashboard/circle-check-icon";
 import { CircleCrossIcon } from "./teacher-dashboard/circle-cross-icon";
 import { SearchIcon } from "./admin-teacher/search-icon";
+import { LoginIcon } from "./loginIcon";
+import { ArrowDown } from "./utils/arrowDown";
 
-export {
+
+
+
+export {ArrowDown,
+  LoginIcon,
   Instagram,
   Twitter,
   Facebook,
