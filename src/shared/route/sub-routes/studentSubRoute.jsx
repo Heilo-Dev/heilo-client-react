@@ -1,4 +1,5 @@
 import { StudentDashboard } from "views/student-dashbord";
+import { StudentInbox } from "views/student-inbox";
 import { StudentProfile } from "views/student-profile";
 import { StudentWallet } from "views/student-wallet";
 
@@ -14,6 +15,10 @@ const studentSubRoute = [
     {
         path: "/student/profile",
         element: <StudentProfile />,
+    },
+    {
+        path: "/student/inbox",
+        element: <StudentInbox />,
     },
 ];
 export default studentSubRoute;
