@@ -117,7 +117,7 @@ const TeacherProfile = () => {
         
         <div className="grid gap-2 grid-cols-2 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-2  ">
           
-          <div className="flex flex-col gap-2 items-center w-full h-60 mt-4  overflow-hidden overflow-y-auto  ">
+          <div className="flex flex-col gap-2 items-center w-full h-[250px] mt-4  overflow-hidden overflow-y-auto  ">
           
           <div className="flex bg-inputBg p-2  rounded-lg gap-x-2 ">
               <img className="w-50px" src={reviewImg} alt="" />
