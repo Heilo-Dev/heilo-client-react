@@ -5,6 +5,7 @@ import TeacherWallet from "views/teacher/features/teacherWallet";
 import {TeacherInbox} from 'views/teacher/features/teacherInbox';
 
 import { HireTutor } from 'shared/components/index';
+import RatingReview from './../../components/popup/ratingReview';
 
 
 
@@ -33,6 +34,10 @@ const teacherSubRoute = [
   {
     path: "/teacher/hiretutor",
     element: < HireTutor/>,
+  },
+  {
+    path: "/teacher/rating",
+    element: < RatingReview/>,
   },
   // {
   //   path: "/teacher/login",

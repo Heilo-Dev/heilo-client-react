@@ -23,7 +23,7 @@ export const InputBox = ({
 
 export const SelectBox = ({ onChange, defaultValue, options,placeholder }) => {
   // 
-  console.log(options);
+  // console.log(options);
   return (
     <Select options={options} defaultValue={defaultValue} placeholder={placeholder}   onChange={onChange} className="w-full mb-2  ">
     </Select>

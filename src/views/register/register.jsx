@@ -37,7 +37,7 @@ const Register = ( ) => {
 
 
   const handleRegister = () => {
-    console.log(gender);
+    // console.log(gender);
     if (
       !name ||
       !gender ||
@@ -53,6 +53,8 @@ const Register = ( ) => {
       toast.error("Password doesn't match");
       return;
     }
+
+    toast.loading("waiting for response")
 
     const data = {
       name: name,
